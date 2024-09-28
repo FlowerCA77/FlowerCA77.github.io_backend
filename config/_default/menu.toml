@@ -1,0 +1,44 @@
+# Configure main menu and social menu
+
+[[social]]
+identifier = "bilibili"
+name = "Bilibili"
+url = "https://space.bilibili.com/438302027"
+
+[social.params]
+icon = "bilibili-line"
+
+[[social]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/FlowerCA77"
+
+[social.params]
+icon = "github"
+
+[[main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+
+[main.params]
+icon = "categories"
+newtab = false
+
+[[main]]
+identifier = "adv_qm"
+name = "Adv. Quantum Mechanics"
+url = "/p/高等量子力学/"
+
+[main.params]
+icon = "adv_qm"
+newtab = false
+
+[[main]]
+identifier = "adv_sm"
+name = "Adv. Statistical Physics"
+url = "/p/高等统计物理/"
+
+[main.params]
+icon = "adv_sm"
+newtab = false
