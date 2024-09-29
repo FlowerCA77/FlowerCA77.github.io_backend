@@ -39,9 +39,8 @@ draft: false
 - 物质 — 被困在每个系统中无法交换
 - 能量 — 可以在两个系统之间交换，但无法向环境交换
 
-{{ with .Resources.GetMatch "fig1-1.png" }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
+![](figures/fig1-1.svg)
+*细线表示导热隔板，粗线表示绝热隔板*
 
 用指标 \( i=1,2 \) 来区分两个系统，设两个系统的总能量(明显恒定)为 \( E^{(0)}=E_1+E_2=\text{const} \)，则总系统的状态数为
 \[
@@ -152,11 +151,64 @@ draft: false
 
 我们来考虑气体的混合问题。
 
-修正的方法就是在上述计算中令 \( S\leftarrow S-k_B\log(N!) \) ，这样得出的熵叫做 **Sackur-Tetrode 方程** ，即
+![](figures/fig1-2.svg)
+
+图中两种气体被导热隔板隔开，令 \( N=N_1+N_2 \) , \( V=V_1+V_2 \) ，热平衡时，其熵为两者之和，分别为
+
+\[ S_i=N_i k_B\log V_i+\frac{3}{2} N_i k_B\left[1+\log\left(\frac{2\pi m_i k_B T}{h^2}\right)\right]\qquad (i=1,2)\]
+
+混合后，其熵变为
+
+\[ S_T=\sum_{i=1,2}\left\{N_i k_B\log V+\frac{3}{2} N_i k_B\left[1+\log\left(\frac{2\pi m_i k_B T}{h^2}\right)\right]\right\}\]
+
+两者差值被定义为 **混合熵** ，即
+
+\[
+    \Delta S=S_T-\sum_{i=1,2}S_i=k_B\left(N_1\log\frac{V}{V_1}+N_2\log\frac{V}{V_2}\right)
+\]
+
+容易看到 \( \Delta S>0 \) ，这与熵增加原理一致。
+
+我们用星号来表示气体分子数密度相同时的混合熵，用角标 \( 1\equiv 2 \) 表示同种分子的混合熵，因此
+
+\[\begin{split}
+    (\Delta S) &= k_B\left(N_1\log\frac{V}{V_1}+N_2\log\frac{V}{V_2}\right) > 0\\
+    (\Delta S)^* &= k_B\left(N_1\log\frac{N}{N_1}+N_2\log\frac{N}{N_2}\right) > 0
+\end{split}\]
+
+注意到 \( \Delta S \) 不依赖于 \( m_i \) ，因此
+
+\[ (\Delta S)_{1\equiv 2}=(\Delta S)>0,\qquad (\Delta S)^*_{1\equiv 2}=(\Delta S)^*>0 \]
+
+但值得注意的是，混合熵 \( (\Delta S)^*_{1\equiv 2} \) 描述的混合过程是两边完全全等的气体的混合，因此应该有 \( (\Delta S)^*_{1\equiv 2}=0 \) 。
+
+注意到，利用 Striling 公式，反过来有
+
+\[ \begin{split}
+    (\Delta S)^*_{1\equiv 2}=(\Delta S)^*
+    &= k_B\left[N_1\log\frac{N}{N_1}+N_2\log\frac{N}{N_2}\right] \\
+    &= k_B\left[(N_1+N_2)\log N-(N_1\log N_1+N_2\log N_2)\right] \\
+    &= k_B(N\log N) - \left[ k_B(N_1\log N_1) + k_B(N_2\log N_2) \right] \\
+    &\simeq k_B\log(N!) - \left[ k_B\log(N_1!) + k_B\log(N_2!) \right]
+\end{split} \]
+
+由此可见修正上述问题的方法就是在上述计算中令 \( S\leftarrow S-k_B\log(N!) \) 使 \( (\Delta S)^*_{1\equiv 2}=0 \) ，这样得出的熵叫做 **Sackur-Tetrode 方程** ，即
 \[\begin{split}
     S(N,V,E) &= Nk_B\log\left[\frac{V}{h^3}\left(\frac{4\pi mE}{3N}\right)^{3/2}\right]+\frac{3}{2}Nk_B - k_B(N\log N-N)\\
     &= Nk_B\log\left[\frac{V}{Nh^3}\left(\frac{4\pi mE}{3N}\right)^{3/2}\right]+\frac{5}{2}Nk_B\\
     &= Nk_B\log\frac{V}{N}+\frac{3}{2}Nk_B\left[\frac{5}{3}+\log\left(\frac{2\pi mk_B T}{h^2}\right)\right]
 \end{split}\]
 
-注意到 \( S=k_B\log\Omega \) ，这一修正就等价于 \( \Omega\leftarrow\dfrac{1}{N!}\Omega \) 。
+注意到 \( S=k_B\log\Omega \) ，这一修正就等价于 \( \Omega\leftarrow\dfrac{1}{N!}\Omega \) ，我们称为 **Gibbs 计数修正** 。
+
+事实上，经典理想气体分子不仅仅是全同的，更是不可分辨的。我们考虑全部可能的排列数
+\[
+    \frac{N!}{n_1!n_2!\cdots}    
+\]
+这些排列，任意对换都很大概率会导致 \( N,V,E \) 宏观态的改变，因此符合 \( N,V,E \) 宏观态的系统在上述排列中往往占极少数，在最极端的情况下仅占上述排列的一种，因此我们需要除掉上述排列中不符合 \( N,V,E \) 宏观态的排列个数。
+
+Gibbs 的方案是只除掉分子 \( N! \) ，这不依赖于具体的排列细节 \( \{n_i\} \) 。这样的作法相当于对分布作了一个虚假的排列因子
+\[ W\{n_i\}=\frac{1}{n_1!n_2!\cdots} \]
+事实上我们应该直接令 \( W\{n_i\}=1 \) 才能得到正确的结果。我们可以看到， Gibbs 的方案导出经典统计的结论，这要求
+\[ \langle n_i\rangle\ll 1 \]
+以保证对换尽可能不破坏 \( N,V,E \) 宏观态条件，这个要求往往适用于温度充分高、密度充分低的气体。在极低温或极高密度情况下，我们需要让 \( W\{n_i\}=1 \) ，在后面我们看到这个要求导出的结果正是量子统计的结论。

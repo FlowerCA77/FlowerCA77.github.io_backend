@@ -6,7 +6,7 @@ name = "Bilibili"
 url = "https://space.bilibili.com/438302027"
 
 [social.params]
-icon = "bilibili-line"
+icon = "bilibili"
 
 [[social]]
 identifier = "github"
@@ -15,6 +15,24 @@ url = "https://github.com/FlowerCA77"
 
 [social.params]
 icon = "github"
+
+[[social]]
+identifier = "profile"
+name = "Profile"
+url = "/p/个人简历/"
+
+[social.params]
+icon = "profile"
+newtab = false
+
+[[main]]
+identifier = "profile"
+name = "Profile"
+url = "/p/个人简历/"
+
+[main.params]
+icon = "profile"
+newtab = false
 
 [[main]]
 identifier = "categories"

@@ -16,5 +16,9 @@ disqusShortname = "hugo-theme-stack"
 
 enableRobotsTXT = true
 
+colorScheme = "light"
+default = "light"
+toggle = false
+
 [pagination]
 pagerSize = 5
