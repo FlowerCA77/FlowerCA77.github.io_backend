@@ -8,6 +8,7 @@ categories:
 tags:
     - 统计力学
     - 物理学
+image: covers/adv_sm.jpg
 math: 
 license: 
 hidden: false

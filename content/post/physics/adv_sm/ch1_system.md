@@ -11,6 +11,7 @@ tags:
     - 物理学
 math: true
 license: 
+image: adv_sm_chap1.jpg
 hidden: false
 comments: true
 draft: false

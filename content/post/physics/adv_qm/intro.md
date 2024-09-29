@@ -10,6 +10,7 @@ tags:
     - 物理学
 math: 
 license: 
+image: covers/adv_qm.jpg
 hidden: false
 comments: true
 draft: false
