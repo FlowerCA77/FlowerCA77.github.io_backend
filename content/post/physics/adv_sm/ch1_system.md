@@ -9,7 +9,7 @@ tags:
     - 统计力学
     - 凝聚态物理
     - 物理学
-math: true
+math: "mathjax"
 license: 
 image: covers/adv_sm_chap1.jpg
 hidden: false

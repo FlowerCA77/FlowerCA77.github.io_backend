@@ -9,7 +9,7 @@ tags:
     - 统计力学
     - 凝聚态物理
     - 物理学
-math: true
+math: "mathjax"
 license: 
 image: covers/adv_sm_chap2.jpg
 hidden: false
@@ -114,4 +114,4 @@ draft: false
 
 [上一篇](/p/热力学系统/)
 
-[下一篇](/p/系综理论/)
+[下一篇](/p/正则系综/)
