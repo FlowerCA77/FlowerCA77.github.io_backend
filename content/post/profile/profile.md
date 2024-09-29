@@ -7,7 +7,7 @@ categories:
 tags:
 math: 
 license: 
-image: profile.jpg
+image: covers/profile.jpg
 hidden: false
 comments: true
 draft: false
