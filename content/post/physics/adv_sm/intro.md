@@ -25,4 +25,8 @@ draft: false
 
 ## [Chapter 1 - Single System & Thermodynamics](/p/热力学系统/)
 
-我们从单个系统出发, 研究一个具体的多粒子系统的行为, 将其与热力学唯象理论对比.
+我们从单个系统出发, 研究一个具体的多粒子系统的行为，将其与热力学唯象理论对比。
+
+## [Chapter 2 - Ensemble Theory and The Microcanonical Ensemble](/p/系综理论)
+
+现在我们转入系综 —— 系统的系统，并研究了一种具体的系综 —— 微正则系综。
