@@ -44,3 +44,5 @@ draft: false
 &\qquad S_1 & & y_2\leftarrow\ M(x_2,w) & \\
 &\qquad S_2 & & \mathtt{return}\ y_2& \\
 \end{align*}\right.\]
+
+可以看到，\( 反馈=训练, 执行=预测 \) 。
