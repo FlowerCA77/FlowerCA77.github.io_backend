@@ -2,7 +2,7 @@
 title: "正则系综确定分布的平均值方法"
 isCJKLanguage: true
 description: 按照 Darwin 和 Fowler 的方法计算分布的平均值
-date: 2024-09-28T19:56:03+08:00
+date: 2024-09-30T19:56:03+08:00
 categories:
     - adv.sm
 tags:
